@@ -1,17 +1,18 @@
-FROM maven:3.6.3 AS maven
-LABEL MAINTAINER="luucasgregorio@gmail.com"
-
-WORKDIR /usr/src/app
-COPY . /usr/src/app
-
-RUN mvn package
-
 FROM adoptopenjdk/openjdk11:alpine-jre
 
-ARG JAR_FILE=simpleapi.jar
+ARG PROFILE
+ARG ADDITIONAL_OPTS
 
-WORKDIR /opt/app
+ENV PROFILE=${PROFILE}
+ENV ADDITIONAL_OPTS=${ADDITIONAL_OPTS}
 
-COPY --from=maven /usr/src/app/target/${JAR_FILE} /opt/app/
+WORKDIR /opt/orangeBank
 
-ENTRYPOINT ["java","-jar","simpleapi.jar"]
+COPY /target/simpleapi*.jar simpleapi.jar
+
+SHELL ["/bin/sh", "-c"]
+
+EXPOSE 5005
+EXPOSE 8080
+
+CMD java ${ADDITIONAL_OPTS} -jar simpleapi.jar --spring.profiles.active=${PROFILE}
