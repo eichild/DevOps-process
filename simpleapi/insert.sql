@@ -1,0 +1,1 @@
+INSERT INTO usuario(cod_usuario, nome, email) VALUES (null, "Linux Tovalds", "aoba@gmail.com");
