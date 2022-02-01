@@ -8,7 +8,7 @@ services:
       - MYSQL_ROOT_HOST=%
       - MYSQL_DATABASE=db
       - MYSQL_USER=admin
-      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
     restart: always
     ports:
       - '3306:3306'
@@ -27,4 +27,4 @@ services:
     environment:
       - ADDITIONAL_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -Xmx1G -Xms128m -XX:MaxMetaspaceSize=128m
       - PROFILE=dev
-
+    restart: always
