@@ -8,6 +8,6 @@ public class StatusController {
 
     @GetMapping(path = "/api/status")
     public String check(){
-        return "pai ta online";
+        return "pai ta on";
     }
 }

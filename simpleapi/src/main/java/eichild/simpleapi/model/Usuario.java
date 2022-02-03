@@ -1,11 +1,8 @@
 package eichild.simpleapi.model;
-
-import eichild.simpleapi.repository.UsuarioRepository;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name = "usuario")
+@Table(name = "usuarios")
 public class Usuario {
 
     @Id

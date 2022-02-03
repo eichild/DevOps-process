@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping(value = "/usuario")
+@RequestMapping("/usuario")
 public class UsuarioController {
 
     private final UsuarioRepository usuarioRepository;
