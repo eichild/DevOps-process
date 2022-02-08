@@ -7,8 +7,8 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cod_pessoa")
-    private Long cod_usuario;
+    @Column(name = "codUsuario")
+    private Long codUsuario;
 
     @Column(name = "nome")
     private String nome;
@@ -18,18 +18,18 @@ public class Usuario {
 
     public static Usuario converter(Usuario u){
         var usuario = new Usuario();
-        usuario.setCod_usuario(u.getCod_usuario());
+        usuario.setCodUsuario(u.getCodUsuario());
         usuario.setNome(u.getNome());
         usuario.setEmail(u.getEmail());
         return usuario;
     }
 
-    public Long getCod_usuario() {
-        return cod_usuario;
+    public Long getCodUsuario() {
+        return codUsuario;
     }
 
-    public void setCod_usuario(Long cod_usuario) {
-        this.cod_usuario = cod_usuario;
+    public void setCodUsuario(Long codUsuario) {
+        this.codUsuario = codUsuario;
     }
 
     public String getNome() {

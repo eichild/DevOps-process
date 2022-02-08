@@ -19,7 +19,7 @@ public class UsuarioController {
         this.usuarioRepository = usuarioRepository;
     }
 
-    @GetMapping("/")
+    @GetMapping(path = "/")
     public List<Usuario> findAll(){
         var usuario = usuarioRepository.findAll();
         return usuario

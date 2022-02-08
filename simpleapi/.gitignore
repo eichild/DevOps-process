@@ -13,6 +13,7 @@ mvnw
 .settings
 .springBeans
 .sts4-cache
+docker
 
 ### IntelliJ IDEA ###
 .idea
