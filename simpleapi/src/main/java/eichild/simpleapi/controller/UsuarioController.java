@@ -34,8 +34,12 @@ public class UsuarioController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping(value = "/salvar")
-    public Usuario salvar(@RequestBody Usuario usuario){
-        return usuarioRepository.save(usuario);
+    @PostMapping(path = "/salvar")
+    public void salvar(@RequestBody Usuario usuario){
+        var u = new Usuario();
+        u.setCodUsuario(usuario.getCodUsuario());
+        u.setNome(usuario.getNome());
+        u.setEmail(usuario.getEmail());
+        usuarioRepository.save(u);
     }
 }
