@@ -1,3 +1,3 @@
 # DevOps-process
 
-another dummy text for jenkins
+vamo jenkins
