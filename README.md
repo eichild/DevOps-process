@@ -1,3 +1,2 @@
 # DevOps-process
 
-vamo jenkins
